@@ -1,0 +1,16 @@
+
+<div class="container text-center"> 
+ <h1>Yorumlar</h1>
+<div class="card-group">
+  <div id="data" class:"card border-primary mb-3">
+    <% @data.each do |datum| %>
+    <br></br>
+      <%= render datum %>
+      <%= link_to "Detaylar", datum, class:"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
+<br> </br>
+<%= link_to "Yeni Yorum Ekle", new_datum_path , class:"btn btn-info btn-lg "%>
+<br> </br>

@@ -1,0 +1,37 @@
+<%= form_with(model: datum) do |form| %>
+  <% if datum.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(datum.errors.count, "error") %> Kayıt Tamamlanmadı! Lütfen Formu Kontrol Edin!</h2>
+      <ul>
+        <% datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :ad, style: "display: block" %>
+    <%= form.text_field :ad ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :marka, style: "display: block" %>
+    <%= form.text_field :marka ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :yorum, style: "display: block" %>
+    <%= form.text_area :yorum ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.number_field :user_id, id: :data_user_id ,class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+  
+  <div>
+    <%= form.submit "Kaydet", class:"btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>
+</div>
+</form>

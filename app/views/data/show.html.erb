@@ -1,0 +1,8 @@
+<%= render @datum %>
+
+<div>
+  <%= link_to "Düzenle", edit_datum_path(@datum), class:"btn btn-info btn-md" %> |
+  <%= link_to "Geri Dön", data_path , class:"btn btn-success btn-md" %>
+<br></br>
+  <%= button_to "Sil", @datum, method: :delete, class:"btn btn-warning btn-md" %>
+</div>
